@@ -51,6 +51,28 @@ NSString *PSContactGeneratedTag = @"Generated";
     }
 }
 
++ (void)deleteAllContacts {
+    if ([ABStandin hasAddressBookAccess:[ABStandin currentAddressBook]]) {
+        NSArray *contacts = [ABContactsHelper contacts];
+        NSUInteger num = [contacts count];
+        NSUInteger deletedNum = 0;
+        for (ABContact *contact in contacts) {
+            NSLog(@"%@", contact);
+            CFErrorRef cfError;
+            BOOL success = ABAddressBookRemoveRecord([ABStandin addressBook], contact.record, &cfError);
+            if (success) {
+                ++deletedNum;
+                [ABStandin save:nil];
+                [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"Deleted %lu/%lu Contacts", deletedNum, num]];
+            }
+            if (!success) {
+                NSLog(@"Failed removing: %@", (__bridge_transfer NSError *)cfError);
+                
+            }
+        }
+    }
+}
+
 - (NSString *)randomGender
 {
     return [@[PSContactGenderMale, PSContactGenderFemale] randomItem];

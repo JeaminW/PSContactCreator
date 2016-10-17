@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Contact Creator View Controller-->
@@ -16,75 +18,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" textAlignment="center" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1e2-sW-K4H">
-                                <rect key="frame" x="95" y="325" width="130" height="69"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="JPA-kV-PW6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxG-Wk-9wu" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="532"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" text="Contact Creator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="pxC-66-wQ3" userLabel="Name Label">
+                                                <rect key="frame" x="20" y="40" width="280" height="152"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.94999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" textAlignment="center" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6ll-rX-bOj" userLabel="Num Contacts Field">
+                                                <rect key="frame" x="106" y="242" width="109" height="69"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="69" id="uLW-r4-63d"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.26771763389999997" green="0.26771763389999997" blue="0.26771763389999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="47"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-u3-woE" userLabel="Generate Button">
+                                                <rect key="frame" x="107" y="319" width="106" height="53"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="53" id="teM-k9-bWY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Generate">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="generateButtonPressed:" destination="2" eventType="touchUpInside" id="T3s-cR-CoE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmk-9Y-aif">
+                                                <rect key="frame" x="95" y="392" width="131" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="E6N-Lp-xuS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Remove Generated">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteButtonPressed:" destination="2" eventType="touchUpInside" id="cOC-LD-ANb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcM-ut-hj4" userLabel="Remove All">
+                                                <rect key="frame" x="122" y="462" width="76" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="HUF-Ga-Mv9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Remove All">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteAllButtonPressed:" destination="2" eventType="touchUpInside" id="lse-5t-zZN"/>
+                                                    <action selector="deleteButtonPressed:" destination="2" eventType="touchUpInside" id="xth-w8-bic"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.87059550379999995" green="0.87059550379999995" blue="0.87059550379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5Vd-u3-woE" firstAttribute="centerX" secondItem="VxG-Wk-9wu" secondAttribute="centerX" id="361-vo-lOL"/>
+                                            <constraint firstItem="pxC-66-wQ3" firstAttribute="leading" secondItem="VxG-Wk-9wu" secondAttribute="leading" constant="20" id="6eZ-64-aBq"/>
+                                            <constraint firstItem="6ll-rX-bOj" firstAttribute="top" secondItem="pxC-66-wQ3" secondAttribute="bottom" constant="50" id="9td-wo-ueW"/>
+                                            <constraint firstItem="5Vd-u3-woE" firstAttribute="top" secondItem="6ll-rX-bOj" secondAttribute="bottom" constant="8" id="E6z-pe-ciI"/>
+                                            <constraint firstItem="pxC-66-wQ3" firstAttribute="top" secondItem="VxG-Wk-9wu" secondAttribute="top" constant="40" id="HP1-QE-o5V"/>
+                                            <constraint firstItem="HcM-ut-hj4" firstAttribute="top" secondItem="cmk-9Y-aif" secondAttribute="bottom" constant="20" id="KC7-F8-HNq"/>
+                                            <constraint firstItem="cmk-9Y-aif" firstAttribute="top" secondItem="5Vd-u3-woE" secondAttribute="bottom" constant="20" id="Ohh-3Z-zsS"/>
+                                            <constraint firstAttribute="centerX" secondItem="6ll-rX-bOj" secondAttribute="centerX" id="RzQ-q6-bBR"/>
+                                            <constraint firstItem="cmk-9Y-aif" firstAttribute="centerX" secondItem="VxG-Wk-9wu" secondAttribute="centerX" id="XMe-bQ-NCL"/>
+                                            <constraint firstItem="HcM-ut-hj4" firstAttribute="centerX" secondItem="VxG-Wk-9wu" secondAttribute="centerX" id="dqB-pd-Mzf"/>
+                                            <constraint firstAttribute="trailing" secondItem="pxC-66-wQ3" secondAttribute="trailing" constant="20" id="fNT-lN-Ls2"/>
+                                            <constraint firstAttribute="bottom" secondItem="HcM-ut-hj4" secondAttribute="bottom" constant="20" id="k5m-E6-ft9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="QgC-Yz-Dmu"/>
-                                    <constraint firstAttribute="height" constant="69" id="uVd-B1-XnU"/>
+                                    <constraint firstAttribute="trailing" secondItem="VxG-Wk-9wu" secondAttribute="trailing" id="9DZ-Ti-Jdn"/>
+                                    <constraint firstAttribute="bottom" secondItem="VxG-Wk-9wu" secondAttribute="bottom" id="TE3-qw-3T0"/>
+                                    <constraint firstItem="VxG-Wk-9wu" firstAttribute="top" secondItem="JPA-kV-PW6" secondAttribute="top" id="k4d-pr-bUb"/>
+                                    <constraint firstItem="VxG-Wk-9wu" firstAttribute="leading" secondItem="JPA-kV-PW6" secondAttribute="leading" id="m82-3K-DYC"/>
                                 </constraints>
-                                <color key="textColor" red="0.26771763389999997" green="0.26771763389999997" blue="0.26771763389999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="47"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="left" misplaced="YES" text="Contact Creator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="q3E-k8-CmX">
-                                <rect key="frame" x="21" y="67" width="286" height="208"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="64"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuA-J4-Rfm">
-                                <rect key="frame" x="84" y="402" width="153" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="ONU-rS-Vdu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Generate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="generateButtonPressed:" destination="2" eventType="touchUpInside" id="VBt-Ac-wy2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAK-uj-HwZ">
-                                <rect key="frame" x="36" y="482" width="248" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="cIM-l7-fN3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Remove Generated">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteButtonPressed:" destination="2" eventType="touchUpInside" id="cMe-QP-odR"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87059550382653061" green="0.87059550382653061" blue="0.87059550382653061" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="q3E-k8-CmX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="21" id="1xE-NR-Kah"/>
-                            <constraint firstAttribute="centerX" secondItem="1e2-sW-K4H" secondAttribute="centerX" id="9hT-v3-3oT"/>
-                            <constraint firstItem="q3E-k8-CmX" firstAttribute="top" secondItem="HsR-Bz-eKF" secondAttribute="bottom" constant="47" id="I7x-Dz-S8o"/>
-                            <constraint firstItem="rAK-uj-HwZ" firstAttribute="top" secondItem="zuA-J4-Rfm" secondAttribute="bottom" constant="21" id="MPY-ax-XoE"/>
-                            <constraint firstItem="HZ9-wq-XkV" firstAttribute="top" secondItem="rAK-uj-HwZ" secondAttribute="bottom" constant="20" id="VKx-RC-4dl"/>
-                            <constraint firstItem="zuA-J4-Rfm" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="84" id="fgp-3e-Dpm"/>
-                            <constraint firstItem="1e2-sW-K4H" firstAttribute="top" relation="lessThanOrEqual" secondItem="q3E-k8-CmX" secondAttribute="bottom" constant="50" id="nbQ-zO-cEf"/>
-                            <constraint firstItem="zuA-J4-Rfm" firstAttribute="top" secondItem="1e2-sW-K4H" secondAttribute="bottom" constant="8" id="o6A-tN-9AC"/>
-                            <constraint firstAttribute="trailing" secondItem="q3E-k8-CmX" secondAttribute="trailing" constant="13" id="pVt-Be-vpK"/>
-                            <constraint firstAttribute="trailing" secondItem="zuA-J4-Rfm" secondAttribute="trailing" constant="83" id="uE9-Hi-J3g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="JPA-kV-PW6" secondAttribute="bottom" id="84S-yw-DUk"/>
+                            <constraint firstItem="VxG-Wk-9wu" firstAttribute="width" secondItem="3" secondAttribute="width" id="TN8-Ov-Hlz"/>
+                            <constraint firstAttribute="trailing" secondItem="JPA-kV-PW6" secondAttribute="trailing" id="X2P-dv-vxi"/>
+                            <constraint firstItem="JPA-kV-PW6" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="X2e-Mm-2bE"/>
+                            <constraint firstItem="JPA-kV-PW6" firstAttribute="top" secondItem="3" secondAttribute="topMargin" id="ZG3-K5-dKt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="generateButton" destination="zuA-J4-Rfm" id="znm-rC-yhg"/>
-                        <outlet property="nameLabel" destination="q3E-k8-CmX" id="TuI-W2-aGq"/>
-                        <outlet property="numContactsField" destination="1e2-sW-K4H" id="zME-LM-z9C"/>
+                        <outlet property="generateButton" destination="5Vd-u3-woE" id="Wm0-3D-AUL"/>
+                        <outlet property="nameLabel" destination="pxC-66-wQ3" id="Y6f-tc-0IH"/>
+                        <outlet property="numContactsField" destination="6ll-rX-bOj" id="9TM-hH-8Nr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="242" y="181"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

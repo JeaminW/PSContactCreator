@@ -12,6 +12,7 @@
 
 + (void)askAndCreateContactsWithCount:(NSInteger)numContacts;
 + (void)deleteAllGeneratedContacts;
++ (void)deleteAllContacts;
 
 - (void)createNContacts:(NSInteger)n;
 

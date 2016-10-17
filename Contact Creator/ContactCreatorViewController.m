@@ -86,4 +86,11 @@ const CGFloat LABEL_DISTANCE = 220.0;
 
     [PSContactCreator deleteAllGeneratedContacts];
 }
+
+- (IBAction)deleteAllButtonPressed:(id)sender {
+    NSLog(@"Delete All button pressed.");
+    
+    [PSContactCreator deleteAllContacts];
+}
+
 @end
